@@ -1,25 +1,23 @@
 package com.plohoy.financemajor.dao;
 
-import com.plohoy.financemajor.api.dao.CostDao;
-import com.plohoy.financemajor.api.domain.Category;
-import com.plohoy.financemajor.api.domain.Cost;
+import com.plohoy.financemajor.FinanceMajorApplicationTests;
+import com.plohoy.financemajor.domain.Category;
+import com.plohoy.financemajor.domain.Cost;
 import com.plohoy.financemajor.util.CostHelper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-public class CostDaoTest {
+public class CostDaoTest extends FinanceMajorApplicationTests {
     @Autowired MongoTemplate mongoTemplate;
     @Autowired CostDao dao;
 
@@ -44,7 +42,7 @@ public class CostDaoTest {
     public void shouldInsertСost() {
         Cost randomCost = CostHelper.getRandomCost();
         dao.insert(randomCost);
-        ArrayList<Cost> allCostsFromDB = (ArrayList<Cost>) dao.findAll();
+        List<Cost> allCostsFromDB = dao.findAll();
 
         assertEquals(1, allCostsFromDB.size());
         assertEquals(randomCost, allCostsFromDB.get(0));

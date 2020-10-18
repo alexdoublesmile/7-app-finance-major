@@ -1,18 +1,18 @@
-package com.plohoy.financemajor.impl.dao;
+package com.plohoy.financemajor.dao;
 
-import com.plohoy.financemajor.api.dao.CostDao;
-import com.plohoy.financemajor.api.domain.Cost;
+import com.plohoy.financemajor.dao.CostDao;
+import com.plohoy.financemajor.domain.Cost;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
+import java.util.List;
 
 @Repository
 public class SimpleCostDao implements CostDao {
     @Autowired MongoTemplate mongoTemplate;
 
-    @Override public Collection<Cost> findAll() {
+    @Override public List<Cost> findAll() {
         return mongoTemplate.findAll(Cost.class);
     }
 

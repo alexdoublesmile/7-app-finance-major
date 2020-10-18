@@ -1,7 +1,7 @@
 package com.plohoy.financemajor.util;
 
-import com.plohoy.financemajor.api.domain.Category;
-import com.plohoy.financemajor.api.domain.Cost;
+import com.plohoy.financemajor.domain.Category;
+import com.plohoy.financemajor.domain.Cost;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

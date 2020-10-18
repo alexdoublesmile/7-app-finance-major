@@ -1,4 +1,4 @@
-package com.plohoy.financemajor.api.domain;
+package com.plohoy.financemajor.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
